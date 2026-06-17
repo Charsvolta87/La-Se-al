@@ -156,7 +156,7 @@ Todo era una simulación diseñada para que nuestros cerebros
 no olvidaran que alguna vez pertenecimos a un planeta.
 Me quedé observando el techo durante unos segundos.
 Otro ciclo.
-Otro día exactamente igual al anterior.`,
+Otro día perfectamente igual al anterior.`,
         opciones: [
             {
                 texto: "Siguiente",

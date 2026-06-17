@@ -116,7 +116,7 @@ ya nada sería igual`,
 
 
     capitulo1: {
-        titulo: "Buen día",
+        titulo: "Inicio",
         imagen: "imagenes/placeholder.png",
         texto: `La mañana del día 75 del año 178 todo parecía normal, hasta la hora 15:45, vino a buscarme Daniel para subir al comedor a desayunar. La noche anterior me quedé con Javi hasta tarde divagando acerca de cómo será llegar a Galiet.`,
         opciones: [

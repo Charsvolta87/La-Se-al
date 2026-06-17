@@ -4,7 +4,7 @@ let currentScene = "inicio";
 /*        PERSONAJE          */
 /* ========================= */
 
-let playerName = "";
+
 
 const player = {
 
@@ -103,13 +103,10 @@ function startIntro(){
 /* ========================= */
 
 function startGame(){
+    player.nombre =
+    document.getElementById("player-name").value;
 
-    playerName =
-        document
-            .getElementById("player-name")
-            .value;
-
-    if(playerName.trim() === ""){
+    if(player.nombre === ""){
 
         alert("Ingrese un nombre");
 
@@ -155,9 +152,9 @@ function showScene(){
         scene.texto;
 
     text = text.replace(
-        "{nombre}",
-        playerName
-    );
+    "{nombre}",
+    player.nombre
+);
 
     storyBox.innerText =
         text;
@@ -219,5 +216,22 @@ function showScene(){
         );
 
     });
+
+}
+function modificarRelacion(
+    personaje,
+    puntos
+){
+
+    player.relaciones[personaje] += puntos;
+
+}
+
+function modificarHabilidad(
+    habilidad,
+    puntos
+){
+
+    player.habilidades[habilidad] += puntos;
 
 }

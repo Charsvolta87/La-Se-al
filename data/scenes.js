@@ -67,11 +67,9 @@ A veces nos preguntabamos si realmente existió.`,
         Pequeños refugios suspendidos en la oscuridad.
 La nuestra orbita una estrella sin nombre en una región olvidada del espacio conocido.
 Estamos tan lejos de la Tierra que ni siquiera aparece en nuestros mapas.
-Y sin embargo, todavía pensamos en ella.
-Todavía soñamos con ella.
+Y sin embargo, todavía pensamos en ella. Todavía soñamos con ella.
 
-Todavía la extrañamos.
-Aunque nunca la hayamos visto.`,
+La extrañamos, aunque nunca la hayamos visto.`,
         opciones: [
             {
                 texto: "Atrás",

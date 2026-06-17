@@ -1,4 +1,4 @@
-let currentScene = 0;
+let currentScene = "inicio";
 
 let playerName = "";
 
@@ -32,7 +32,9 @@ function startGame(){
 
 function showScene(){
 
-    let text = scenes[currentScene];
+    const scene = scenes[currentScene];
+
+    let text = scene.texto;
 
     text = text.replace(
         "{nombre}",

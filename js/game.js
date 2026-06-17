@@ -3,23 +3,21 @@ let currentScene = "inicio";
 let playerName = "";
 
 const startBtn = document.getElementById("start-btn");
-const nextBtn = document.getElementById("next-btn");
 
 const nameScreen = document.getElementById("name-screen");
 const gameScreen = document.getElementById("game-screen");
 
 const storyBox = document.getElementById("story-box");
+const choicesDiv = document.getElementById("choices");
 
 startBtn.addEventListener("click", startGame);
 
-nextBtn.addEventListener("click", nextScene);
-
-function startGame(){
+function startGame() {
 
     playerName =
         document.getElementById("player-name").value;
 
-    if(playerName.trim() === ""){
+    if (playerName.trim() === "") {
         alert("Ingrese un nombre");
         return;
     }
@@ -30,11 +28,18 @@ function startGame(){
     showScene();
 }
 
-function showScene(){
-
-    console.log(currentScene);
+function showScene() {
 
     const scene = scenes[currentScene];
+
+    if (!scene) {
+
+        storyBox.innerHTML = `
+            Error: no existe la escena "${currentScene}"
+        `;
+
+        return;
+    }
 
     let text = scene.texto;
 
@@ -44,27 +49,41 @@ function showScene(){
     );
 
     storyBox.innerText = text;
-}
 
-function nextScene(){function nextScene(){
+    choicesDiv.innerHTML = "";
 
-    if(currentScene === "inicio"){
-        currentScene = "estacion";
-    }
-    else if(currentScene === "estacion"){
-        currentScene = "senal";
-    }
-    else{
+    if (scene.opciones.length === 0) {
 
-        storyBox.innerHTML = `
-            Fin de la demo.<br><br>
-            Gracias por jugar, ${playerName}.
-        `;
+        const endMessage =
+            document.createElement("p");
 
-        nextBtn.style.display = "none";
+        endMessage.innerHTML =
+            "<br><strong>Fin de la demo.</strong>";
+
+        choicesDiv.appendChild(endMessage);
 
         return;
     }
 
-    showScene();
+    scene.opciones.forEach(opcion => {
+
+        const button =
+            document.createElement("button");
+
+        button.innerText =
+            opcion.texto;
+
+        button.addEventListener("click", () => {
+
+            currentScene =
+                opcion.siguiente;
+
+            showScene();
+
+        });
+
+        choicesDiv.appendChild(button);
+
+    });
+
 }

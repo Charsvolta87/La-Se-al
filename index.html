@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Última Señal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="overlay">
+
+        <h1>LA ÚLTIMA SEÑAL</h1>
+
+        <div id="name-screen">
+
+            <p>Ingrese el nombre de su personaje:</p>
+
+            <input
+                type="text"
+                id="player-name"
+                placeholder="Nombre">
+
+            <button id="start-btn">
+                Comenzar
+            </button>
+
+        </div>
+
+        <div id="game-screen" class="hidden">
+
+            <div id="story-box">
+                Cargando...
+            </div>
+
+            <button id="next-btn">
+                Continuar
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="data/scenes.js"></script>
+    <script src="js/game.js"></script>
+
+</body>
+</html>

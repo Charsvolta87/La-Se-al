@@ -1,7 +1,7 @@
 const scenes = {
 
     inicio: {
-        titulo: "Bienvenido a<br>Protocolo 105",
+        titulo: "Introducción",
         imagen: "imagenes/prologo/inicio.png",
         texto: `Año 2478.
 
@@ -38,7 +38,7 @@ En alguna parte del extenso universo la humanidad se encuentra a salvo, lejos de
 
     senal: {
         titulo: "Introducción",
-        imagen: "imagenes/prologo/señal.png",
+        imagen: "imagenes/prologo/senal.png",
         texto: `Hasta que una alarma rompe el silencio.
 
 Una señal desconocida acaba de ser detectada.`,

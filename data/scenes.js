@@ -57,7 +57,7 @@ Una señal desconocida acaba de ser detectada.`,
         
 capitulo1: {
     titulo: "Buen dia",
-    imagen: "imagenes/buen dia/comienzo.png",
+    imagen: "imagenes/placeholder",
     texto: `La mañana del día 75 del año 178 todo parecía normal, hasta la hora 15:45, vino a buscarme Daniel para subir al comedor a desayunar, la noche anterior me quedé con Javi hasta tarde divagando acerca de como será llegar a Galiet.`,
     opciones: [
 

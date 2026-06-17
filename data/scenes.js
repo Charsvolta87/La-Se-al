@@ -110,9 +110,10 @@ Nada cambiaba jamás.`,
     senal: {
         titulo: "Introducción",
         imagen: "imagenes/prologo/senal.png",
-        texto: `Hasta que un dia ese sonido que nunca antes pensamos escuchar, llegó.
+        texto: `Hasta que un dia un sonido que nunca antes pensamos escuchar, llegó.
 
-No sabiamos de qué se trataba, pero sí sabiamos que desde ese momento
+No sabíamos si era cierto, tampoco de qué se trataba exactamente,
+pero sí sabiamos que desde ese momento
 ya nada sería igual`,
         opciones: [
             {

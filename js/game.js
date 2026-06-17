@@ -32,6 +32,8 @@ function startGame(){
 
 function showScene(){
 
+    console.log(currentScene);
+
     const scene = scenes[currentScene];
 
     let text = scene.texto;

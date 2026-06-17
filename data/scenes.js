@@ -3,9 +3,9 @@ const scenes = {
     inicio: {
         texto: `Año 2478.
 
-La humanidad abandonó la Tierra hace siglos.
-
-Los Arquitectos dominaron el planeta y nadie volvió a saber de él.`,
+En alguna parte del extenso universo la humanidad se encuentra a salvo, lejos de lo que alguna vez llamaron Tierra.
+Esnnesta pequeña estación espacial los restos sobrevivientes de la raza humana intenta seguir con vida.
+hasta que...`,
 
         opciones: [
             {

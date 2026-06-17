@@ -2,69 +2,133 @@ let currentScene = "inicio";
 
 let playerName = "";
 
-const startBtn = document.getElementById("start-btn");
+/* ========================= */
+/* ELEMENTOS */
+/* ========================= */
 
-const nameScreen = document.getElementById("name-screen");
-const gameScreen = document.getElementById("game-screen");
+const coverScreen =
+    document.getElementById("cover-screen");
 
-const storyBox = document.getElementById("story-box");
-const choicesDiv = document.getElementById("choices");
+const coverBtn =
+    document.getElementById("cover-btn");
 
-startBtn.addEventListener("click", startGame);
+const nameScreen =
+    document.getElementById("name-screen");
+
+const gameScreen =
+    document.getElementById("game-screen");
+
+const startBtn =
+    document.getElementById("start-btn");
 
 const sceneTitle =
     document.getElementById("scene-title");
-    
+
 const sceneImage =
     document.getElementById("scene-image");
 
-function startGame() {
+const storyBox =
+    document.getElementById("story-box");
 
-    playerName =
-        document.getElementById("player-name").value;
+const choicesDiv =
+    document.getElementById("choices");
 
-    if (playerName.trim() === "") {
-        alert("Ingrese un nombre");
-        return;
-    }
+/* ========================= */
+/* EVENTOS */
+/* ========================= */
 
-    nameScreen.classList.add("hidden");
+coverBtn.addEventListener(
+    "click",
+    startIntro
+);
+
+startBtn.addEventListener(
+    "click",
+    startGame
+);
+
+/* ========================= */
+/* PORTADA */
+/* ========================= */
+
+function startIntro(){
+
+    coverScreen.classList.add("hidden");
+
     gameScreen.classList.remove("hidden");
+
+    currentScene = "inicio";
 
     showScene();
 }
 
-function showScene() {
+/* ========================= */
+/* CREAR PERSONAJE */
+/* ========================= */
 
-    const scene = scenes[currentScene];
-    sceneImage.src = scene.imagen;
+function startGame(){
 
-    if (!scene) {
+    playerName =
+        document
+            .getElementById("player-name")
+            .value;
+
+    if(playerName.trim() === ""){
+
+        alert("Ingrese un nombre");
+
+        return;
+    }
+
+    nameScreen.classList.add("hidden");
+
+    gameScreen.classList.remove("hidden");
+
+    currentScene = "capitulo1";
+
+    showScene();
+}
+
+/* ========================= */
+/* MOSTRAR ESCENA */
+/* ========================= */
+
+function showScene(){
+
+    const scene =
+        scenes[currentScene];
+
+    if(!scene){
 
         storyBox.innerHTML = `
-            Error: no existe la escena "${currentScene}"
+            Error:
+            no existe la escena
+            "${currentScene}"
         `;
 
         return;
     }
-      sceneTitle.innerHTML =
+
+    sceneTitle.innerHTML =
         scene.titulo;
 
     sceneImage.src =
         scene.imagen;
 
-    let text = scene.texto;
+    let text =
+        scene.texto;
 
     text = text.replace(
         "{nombre}",
         playerName
     );
 
-    storyBox.innerText = text;
+    storyBox.innerText =
+        text;
 
     choicesDiv.innerHTML = "";
 
-    if (scene.opciones.length === 0) {
+    if(scene.opciones.length === 0){
 
         const endMessage =
             document.createElement("p");
@@ -72,7 +136,9 @@ function showScene() {
         endMessage.innerHTML =
             "<br><strong>Fin de la demo.</strong>";
 
-        choicesDiv.appendChild(endMessage);
+        choicesDiv.appendChild(
+            endMessage
+        );
 
         return;
     }
@@ -85,16 +151,36 @@ function showScene() {
         button.innerText =
             opcion.texto;
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-            currentScene =
-                opcion.siguiente;
+                if(
+                    opcion.siguiente ===
+                    "crear_personaje"
+                ){
 
-            showScene();
+                    gameScreen
+                        .classList
+                        .add("hidden");
 
-        });
+                    nameScreen
+                        .classList
+                        .remove("hidden");
 
-        choicesDiv.appendChild(button);
+                    return;
+                }
+
+                currentScene =
+                    opcion.siguiente;
+
+                showScene();
+            }
+        );
+
+        choicesDiv.appendChild(
+            button
+        );
 
     });
 

@@ -1,5 +1,25 @@
 const scenes = {
 
+    intro_01: {
+
+    titulo: "Prólogo",
+
+    imagen: "imagenes/prologo/inicio.png",
+
+    texto: `Nunca vi la Tierra.
+
+Nadie de mi generación la vio.
+
+La conocemos por archivos incompletos...`,
+
+    opciones: [
+        {
+            texto: "Continuar",
+            siguiente: "intro_02"
+        }
+    ]
+},
+
         //////////////////////
         ///* INTRODUCCION *///
         //////////////////////
@@ -101,10 +121,25 @@ ya nada sería igual`,
             },
             {
                 texto: "Comenzar",
-                siguiente: "capitulo1"
+                siguiente: "intro_final"
             }
         ]
     },
+    intro_final: {
+
+    titulo: "Identificación",
+
+    imagen: "imagenes/prologo/placeholder.png",
+
+    texto: `Antes de acceder a los registros de comunicaciones debe identificarse.`,
+
+    opciones: [
+    {
+        texto: "Identificarme",
+        siguiente: "crear_personaje"
+    }
+]
+},
 
 
 

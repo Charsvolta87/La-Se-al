@@ -88,7 +88,7 @@ Nada cambiaba jamás.`,
             },
             {
                 texto: "Siguiente",
-                siguiente: "señal"
+                siguiente: "senal"
             }
         ]
     },
